@@ -59,7 +59,7 @@ function Base.show(io::IO, diff::StringDiff)
     xchars = before(diff.diff)
     ychars = after(diff.diff)
     laststate = :init
-
+    io=stdout
     print(io, "\"")
     visitall(diff.diff) do idx, state, last
         if !hascolor(io)
